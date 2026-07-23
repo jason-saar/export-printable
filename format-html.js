@@ -20,11 +20,11 @@ export function formatHtml(doc) {
             </head>
 
             <body>
-                <!-- Deck Name -->
+                <!-- Title -->
                 <h1>${escapeHtml(doc.title)}</h1>
 
-                <!-- Play Format -->
-                <h2>${escapeHtml(doc.subtitle)}</h2>
+                <!-- Subtitle -->
+                ${doc.subtitle ? `<h2>escapeHtml(doc.subtitle)}</h2>` : ""}
 
                 <!-- Sections -->
                     ${doc.sections.map(section => `
