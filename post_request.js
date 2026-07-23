@@ -31,7 +31,7 @@ const response = await fetch("http://localhost:5555/export",
     {
         method: "POST",     // look for app.post
         headers: { "Content-Type": "application/json" },    // data sending is JSON
-        body: JSON.stringify({doc})      // passing JS and converting because HTTP only accepts text
+        body: JSON.stringify(doc)      // passing JS and converting because HTTP only accepts text
     }
 );
 

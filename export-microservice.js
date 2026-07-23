@@ -15,7 +15,7 @@ app.listen(PORT, () => {
 // POST
 app.post("/export", (req, res) => {
 
-    const doc = req.body.doc;    // extract doc from request
+    const doc = req.body;    // extract doc from request
     
     const html_response = formatHtml(doc); // run this other function/file
 
