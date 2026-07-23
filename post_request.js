@@ -1,5 +1,7 @@
 // Sends a Post Request (FROM MAIN SERVICE)
 
+import fs from "fs";
+
 // Testing Data
 const doc = {
     title: "Mono-Red Burn",
@@ -23,6 +25,7 @@ const doc = {
 };
 
 
+// Send to Microservice
 const response = await fetch("http://localhost:5555/export", 
     // OPTIONS OBJECT
     {
@@ -32,5 +35,11 @@ const response = await fetch("http://localhost:5555/export",
     }
 );
 
+// Recieve Reseponse
 const html = await response.text(); // .text = read text
+
+// Save to File
+fs.writeFileSync("output.html", html);  
+
+// Log to Console
 console.log(html);

@@ -8,20 +8,26 @@ export function formatHtml(doc) {
             </head>
 
             <body>
+                <!-- Deck Name -->
                 <h1>${doc.title}</h1>
+
+                <!-- Play Format -->
                 <h2>${doc.subtitle}</h2>
 
-                <h3>${doc.sections[0].heading}</h3>
-                <ul>
-                    <li>${doc.sections[0].items[0]}</li>
-                    <li>${doc.sections[0].items[1]}</li>
-                </ul>
+                <!-- Creatures -->
+                    <h3>${doc.sections[0].heading}</h3>
+                    <ul>
+                        <li>${doc.sections[0].items[0]}</li>
+                        <li>${doc.sections[0].items[1]}</li>
+                    </ul>
 
-                <h3>${doc.sections[1].heading}</h3>
-                <ul>
-                    <li>${doc.sections[1].items[0]}</li>
-                    <li>${doc.sections[1].items[1]}</li>
-                </ul>
+                <!-- Spells -->
+                    <h3>${doc.sections[1].heading}</h3>
+                    <ul>
+                        <li>${doc.sections[1].items[0]}</li>
+                        <li>${doc.sections[1].items[1]}</li>
+                    </ul>
+
             </body>
         </html>
     `;
