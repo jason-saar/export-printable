@@ -5,7 +5,8 @@
   "main": "export-microservice.js",
   "scripts": {
     "start": "node export-microservice.js",
-    "test": "node post_request.js"
+    "test": "node post_request.js",
+    "test:invalid": "node test-invalid.js"
   },
   "repository": {
     "type": "git",
