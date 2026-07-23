@@ -1,4 +1,4 @@
-export function formatHtml() {
+export function formatHtml(name) {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -9,7 +9,7 @@ export function formatHtml() {
 
             <body>
                 <h1>Printable Document</h1>
-                <p>Request received.</p>
+                <p>Request received. Hello ${name}</p>
             </body>
         </html>
     `;

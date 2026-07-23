@@ -7,19 +7,21 @@ const app = express(); // create application
 const PORT = 3000;  // port listening on
 app.use(express.json()); // parse jSON
 
+// LISTEN
+app.listen(PORT, () => {
+    console.log(`Export Printable Microservice is running on port ${PORT}`);
+});
+
 // GET
 app.get("/", (req, res) => {
-    res.send("Export Printable Microservice is working.");
+    res.send("Export Printable Microservice: GET REQUEST");
 });
 
 // POST
 app.post("/export", (req, res) => {
-    const html = formatHtml();
+    const name = req.body.name;     // extract name from request
+    
+    const html_response = formatHtml(name); // run this other function/file
 
-    res.type("html").send(html);
-});
-
-// LISTEN
-app.listen(PORT, () => {
-    console.log(`Export Printable Microservice is running on port ${PORT}`);
+    res.type("html").send(html_response);   // send it back
 });
