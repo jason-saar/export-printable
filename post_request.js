@@ -1,4 +1,4 @@
-// Sends a Post Request
+// Sends a Post Request (FROM MAIN SERVICE)
 
 const response = await fetch("http://localhost:3000/export", 
     // OPTIONS OBJECT

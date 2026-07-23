@@ -12,11 +12,6 @@ app.listen(PORT, () => {
     console.log(`Export Printable Microservice is running on port ${PORT}`);
 });
 
-// GET
-app.get("/", (req, res) => {
-    res.send("Export Printable Microservice: GET REQUEST");
-});
-
 // POST
 app.post("/export", (req, res) => {
     const name = req.body.name;     // extract name from request
