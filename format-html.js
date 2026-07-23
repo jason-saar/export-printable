@@ -1,4 +1,4 @@
-export function formatHtml(name) {
+export function formatHtml(doc) {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -8,8 +8,20 @@ export function formatHtml(name) {
             </head>
 
             <body>
-                <h1>Printable Document</h1>
-                <p>Request received. Hello ${name}</p>
+                <h1>${doc.title}</h1>
+                <h2>${doc.subtitle}</h2>
+
+                <h3>${doc.sections[0].heading}</h3>
+                <ul>
+                    <li>${doc.sections[0].items[0]}</li>
+                    <li>${doc.sections[0].items[1]}</li>
+                </ul>
+
+                <h3>${doc.sections[1].heading}</h3>
+                <ul>
+                    <li>${doc.sections[1].items[0]}</li>
+                    <li>${doc.sections[1].items[1]}</li>
+                </ul>
             </body>
         </html>
     `;
