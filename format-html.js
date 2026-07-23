@@ -14,20 +14,13 @@ export function formatHtml(doc) {
                 <!-- Play Format -->
                 <h2>${doc.subtitle}</h2>
 
-                <!-- Creatures -->
-                    <h3>${doc.sections[0].heading}</h3>
-                    <ul>
-                        <li>${doc.sections[0].items[0]}</li>
-                        <li>${doc.sections[0].items[1]}</li>
-                    </ul>
-
-                <!-- Spells -->
-                    <h3>${doc.sections[1].heading}</h3>
-                    <ul>
-                        <li>${doc.sections[1].items[0]}</li>
-                        <li>${doc.sections[1].items[1]}</li>
-                    </ul>
-
+                <!-- Sections -->
+                    ${doc.sections.map(section => `
+                        <h3>${section.heading}</h3>
+                        <ul>
+                            ${section.items.map(item => `<li>${item}</li>`).join("")}
+                        </ul>    
+                    `).join("")}
             </body>
         </html>
     `;
