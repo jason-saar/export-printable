@@ -1,10 +1,11 @@
 {
   "name": "export-printable",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Microservice that accepts a JSON document and returns a printable HTML page",
+  "main": "export-microservice.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node export-microservice.js",
+    "test": "node post_request.js"
   },
   "repository": {
     "type": "git",
