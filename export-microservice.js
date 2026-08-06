@@ -25,10 +25,10 @@ app.post("/export", (req, res) => {
     if (!Array.isArray(doc.sections)) {
         return res.status(400).json({ error: "sections is required and must be an array" });
     }
-    const errors = []
+    const errors = [];
     doc.sections.forEach((section, i) => {
         if (typeof section.heading !== "string" || section.heading.trim() === "") {
-            errors.push(`section ${i}: heading is required`)
+            errors.push(`section ${i}: heading is required`);
         }
         if (!Array.isArray(section.items)) {
             errors.push(`section ${i}: items must be an array`);
@@ -44,6 +44,6 @@ app.post("/export", (req, res) => {
         return res.status(400).json({ error: errors.join("; ")})
     }
 
-    const html_response = formatHtml(doc); // run this other function/file
+    const htmlResponse = formatHtml(doc); // run this other function/file
     res.type("html").send(html_response);   // send it back
 });
